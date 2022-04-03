@@ -16,9 +16,12 @@ function gatilho() {
 
     if(!verificarLogado()){
         window.location.href = '/login'
-    }else{
-        window.location.href = '/feed'
     }
 }
 
 gatilho()
+
+function logout() {
+    localStorage.setItem('_perfil_dados', JSON.stringify({logado: false}))
+    window.location.href = '/login'
+}

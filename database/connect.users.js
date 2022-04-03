@@ -22,8 +22,11 @@ const Schema = new mongoose.Schema({
 })
 
 const PostSchema = new mongoose.Schema({
+    email: {
+        type: String
+    },
     conteudo: {
-        
+        type: String
     }
 })
 
