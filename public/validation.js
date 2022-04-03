@@ -13,8 +13,11 @@ function verificarLogado() {
 
 function gatilho() {
     console.log(verificarLogado())
+
     if(!verificarLogado()){
         window.location.href = '/login'
+    }else{
+        window.location.href = '/feed'
     }
 }
 
