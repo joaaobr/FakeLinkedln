@@ -22,7 +22,7 @@ function exibirNomes() {
     const label2 = document.getElementById('foto')
     let tex = document.createTextNode(nome)
     label2.appendChild(tex)
-
+    
     let texto = document.createTextNode(nome)
     return label.appendChild(texto)
 

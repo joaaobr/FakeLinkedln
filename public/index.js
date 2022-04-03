@@ -65,20 +65,31 @@ function adicionarUsuario() {
 function add() {
   const input1 = document.getElementById("conteudo");
   const conteudo = input1.value;
-
-  const obj = { conteudo }
+  const perfil = JSON.parse(localStorage.getItem('_perfil_dados'))
+  const obj = { conteudo, perfil}
   
   fetch('/addPost', {
       method: "POST",
       headers: {'Content-Type': 'application/json'}, 
       body: JSON.stringify(obj)
   })
+  .then(res => {  
+    if(res.ok) {
+        return res.text()
+    }
+    throw new Error(res)   
+})
   .then(res => {
-    window.location.reload();
+    const response = JSON.parse(res)
+    if(response.status == false){
+        alert(response.mensagem);
+    }else{
+      window.location.reload();
+    }
   })
   .catch(err => {
-    document.getElementById("descricao").value = '';
-    alert("Falha ao inserir dados!")
+    console.log(err)
+    alert(err.mensagem);
   })
 };
 

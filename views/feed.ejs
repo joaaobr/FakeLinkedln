@@ -219,6 +219,7 @@
             width: 150px;
             border: 1px rgb(221, 214, 214) solid;
             background-color: white;
+            position: absolute;
         }
 
         .fundos{
@@ -299,6 +300,7 @@
             background-color: rgb(242, 237, 240);
         }
     </style>
+      
 </head>
 <body>
     
@@ -306,6 +308,7 @@
         <div class="container-logo">
             <div class="logo-img">
                 <li for="" id="label"></li>
+                
                 <a href="/home"><img id="imagem" src=https://olhardigital.com.br/wp-content/uploads/2021/02/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe829553.8964224815219374065349.png" alt="linkedln" height="52px" width="53px"></a>
             </div>
             <div class="pesquisa">
@@ -361,20 +364,19 @@
             <button onclick="add()">Publicar</button>
         </div>
     </div>
+
     <% if(post.length > 0) { post.forEach( posts => { %> 
         <div class="publicaçoes">
             <p id="p"></p>
             <p id="postConteudo"><%= posts.conteudo %></p>
+            <p><%= posts.perfil.nome %></p>
             <button onclick="deletarPost('<%= posts._id %>')">Deletar Publicação</button>
+
         </div>
 
-    <% })} else %> <% {%>
-        <p>Não ha posts...</p>
-
-        <% } %>
+    <% })}%>
     <script src="/validation.js"></script>
     <script src="/index.js"></script>
     <script src="/perfil.js"></script>
-   
 </body>
 </html>

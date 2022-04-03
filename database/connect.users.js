@@ -21,13 +21,17 @@ const Schema = new mongoose.Schema({
     }
 })
 
+
 const PostSchema = new mongoose.Schema({
-    email: {
-        type: String
+    perfil: {
+        type: Object
     },
     conteudo: {
         type: String
-    }
+    },
+    
+}, {
+    timestamps: true
 })
 
 const UserModel = mongoose.model('users', Schema)

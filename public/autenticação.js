@@ -18,6 +18,7 @@ function loginDeUsuarios() {
         if(res.ok) {
             return res.text()
         }
+        console.log(res)
         throw new Error('falha ao cadastrar')   
     })
     .then((res) => {

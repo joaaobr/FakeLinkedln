@@ -26,7 +26,8 @@ app.post('/authenticate', async(req, res) => {
         const perfil = {
             logado: true,
             nome: auth[0].nome,
-            sobrenome: auth[0].sobrenome
+            sobrenome: auth[0].sobrenome,
+            email: auth[0].email
         }
         res.status(200).json(perfil)
     }else{
@@ -78,7 +79,7 @@ app.post('/update', async(req, res) => {
 })
 
 app.get('/feed', async(req, res) => {
-    const post = await db.PostModel.find()
+    const post = await db.PostModel.find().sort({createdAt: -1})
 
     res.render('feed', { post })
 })
@@ -90,8 +91,19 @@ app.get('/home', (req, res) => {
 
 app.post('/addPost', async(req, res) => {
     try {
+
+        if(!req.body){
+            return res.status(200).json({status: false, mensagem: 'Nenhum parametro recebido!'});
+        }
+        if(req.body.conteudo == ""){
+            return res.status(200).json({status: false, mensagem: 'Nenhum conteudo recebido!'});
+        }
+        const conteudo = req.body.conteudo
         const post = await db.PostModel.create(req.body)
-        res.status(201).send('Post criado com sucesso!')
+        res.status(201).json({status: true, msg:'Post criado com sucesso!'})  
+        
+        
+
     } catch (error) {
         console.log(error)
         res.status(500).send(error)
@@ -107,5 +119,7 @@ app.post('/deletePost/:id', async(req, res) => {
         res.status(500).send(error)
     } 
 })
+
+
 
 app.listen(port, () => console.log('Conectado...'))
