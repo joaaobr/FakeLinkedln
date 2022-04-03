@@ -15,6 +15,26 @@ app.get('/login', (req, res) => {
     res.render('login')
 })
 
+
+app.post('/authenticate', async(req, res) => {
+    const email = req.body.email
+    const senha = req.body.senha
+    const auth = await db.UserModel.find({email, senha})
+    console.log(auth)
+
+    if(auth[0]){
+        const perfil = {
+            logado: true,
+            nome: auth[0].nome,
+            sobrenome: auth[0].sobrenome
+        }
+        res.status(200).json(perfil)
+    }else{
+        res.status(401).json({msg: 'Erro'})
+    }
+})
+
+
 app.post('/add', async(req, res) => {
     try {
         const email = req.body.email
@@ -57,9 +77,35 @@ app.post('/update', async(req, res) => {
     }
 })
 
+app.get('/feed', async(req, res) => {
+    const post = await db.PostModel.find()
+
+    res.render('feed', { post })
+})
+
 app.get('/home', (req, res) => {
     res.render('home')
 })
 
+
+app.post('/addPost', async(req, res) => {
+    try {
+        const post = await db.PostModel.create(req.body)
+        res.status(201).send('Post criado com sucesso!')
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error)
+    }
+})
+
+app.post('/deletePost/:id', async(req, res) => {
+    try {
+        const post = await db.PostModel.findByIdAndRemove(req.params.id)
+        res.status(201).send('Post deletado com sucesso!')
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error)
+    } 
+})
 
 app.listen(port, () => console.log('Conectado...'))

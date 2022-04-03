@@ -58,3 +58,68 @@ function adicionarUsuario() {
       alert("Falha ao inserir dados!")
     })
   };
+
+
+
+
+function add() {
+  const input1 = document.getElementById("conteudo");
+  const conteudo = input1.value;
+
+  const obj = { conteudo }
+  
+  fetch('/addPost', {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'}, 
+      body: JSON.stringify(obj)
+  })
+  .then(res => {
+    window.location.reload();
+  })
+  .catch(err => {
+    document.getElementById("descricao").value = '';
+    alert("Falha ao inserir dados!")
+  })
+};
+
+
+function deletarPost(id) {
+  const input1 = document.getElementById("conteudo");
+  const conteudo = input1.value;
+
+  const obj = { conteudo }
+  
+  fetch(`/deletePost/${id}`, {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'}, 
+      body: JSON.stringify(obj)
+  })
+  .then(res => {
+    window.location.reload();
+  })
+  .catch(err => {
+    document.getElementById("descricao").value = '';
+    alert("Falha ao inserir dados!")
+  })
+};
+
+
+function deletarPost(id) {
+  const input1 = document.getElementById("conteudo");
+  const conteudo = input1.value;
+
+  const obj = { conteudo }
+  
+  fetch(`/deletePost/${id}`, {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'}, 
+      body: JSON.stringify(obj)
+  })
+  .then(res => {
+    window.location.reload();
+  })
+  .catch(err => {
+    document.getElementById("descricao").value = '';
+    alert("Falha ao inserir dados!")
+  })
+};

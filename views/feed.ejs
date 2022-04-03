@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.linkedin.com/signup"><link rel="icon" href="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca">
+    <title>Feed | Linkedln</title>
+    <style>
+        body{
+            background-color: rgb(245, 243, 244);
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            background-color: rgb(249, 255, 255);
+            display: flex;
+            justify-content: space-around;
+            border: 0.5px rgb(246, 249, 245) solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            align-items: center;
+            
+        }
+
+        .logo-img{
+           margin-top: 3px;
+           margin-left: 20px;
+        }
+        .container-logo{
+            display: flex;
+            align-items: center;
+        }
+        .logo-tetxo{
+            margin-left: 25px;
+            color: rgb(169, 169, 169);
+        }
+
+        .menu li{
+            display: inline-block;
+            margin: 0px 12px;
+        }
+
+        .menu li a {
+            font-size: 16px;
+            text-decoration: none;
+            color: rgb(169, 169, 255)
+        }
+        .menu li a:hover {
+            font-size: 16px;
+            text-decoration: none;
+            color: rgb(41, 38, 38);
+        }
+        
+        .pesquisa input{
+            color: rgb(0, 0, 0);
+            height: 28px;
+            width: 190px;
+            border-radius: 3px;
+            margin-left: 5px;
+            border: none;
+            background-color: rgb(248, 245, 245);
+        }
+        
+        .pesquisa input:hover{
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            margin-left: 5px;
+            border: none;
+            background-color: rgb(245, 243, 245);
+        }
+
+        .pesquisa ::-webkit-input-placeholder{
+            position: fixed;
+            margin-top: 7px;
+            margin-left: 15px;
+
+        }
+        .posts{
+            margin-top: 20px;
+            height: 305px;
+            width: 510px;
+            background-color: rgb(255, 255, 255);
+            border: 1px  rgb(240, 240, 240) solid;
+            border-radius: 11px;
+            border: 1px rgb(230, 238, 237) solid;
+            margin-left: 512px;
+        }
+
+        .posts input{
+            height: 35px;
+            width: 250px;
+            border: 1px rgb(230, 235, 238) solid;
+            font-size: 13px ;
+            text-decoration: none;
+            border-radius: 17px;
+            text-align: top;
+            margin-left: 122px;
+            margin-top: 22px;
+            text-align: left;
+        }
+
+        .posts textarea{
+            width: 480px;
+        }
+
+
+        .posts input:hover{
+            background-color: rgb(255, 255, 255);
+        }
+
+        textarea:focus {
+            box-shadow: 0 0 0 0;
+            outline: 0;
+        }
+
+        input:focus {
+            box-shadow: 0 0 0 0;
+            outline: 0;
+        }
+
+        .posts ::-webkit-input-placeholder{
+            position: fixed;
+            border: none;
+        }
+
+        
+
+        a{
+            text-decoration: none;
+        }
+
+        textarea {
+            border: none;
+            height: 195px;
+            width: 535px;
+            margin-left: 13px;
+            margin-top: 11px;
+            font-size: 13px;
+        }
+
+        textarea {
+            resize: none;
+        }       
+
+        label{
+            font-size: 20px;
+            margin-left: 15px;
+            
+        }
+      
+
+        .btn1 button{
+            color: rgb(92, 119, 240);
+            font-size: 13px;
+            background-color: rgb(248, 248, 247);
+            height: 20px;
+            width: 10px;
+            border: none;
+        }
+
+        .publicar button{
+            border: none;
+            height: 30px;
+            width: 110px;
+            background-color: rgb(244, 244, 244);
+            border-radius: 14px;
+            font-size: 13px;
+            margin-left: 1px;
+            color: rgb(199, 190, 200);
+            margin-left: 8px;
+        }
+
+        .publicar button:hover{
+            color: white;
+            background-color: rgb(151, 205, 203);
+        }
+        
+        .publicaçoes{
+            height: 325px;
+            width: 450px;;
+            border: 1px rgb(220, 226, 226) solid;
+            margin-left: 541px;
+            border-radius: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+        
+        #label{
+            font-size: 14px;
+            display: inline-block;
+            margin: 1px 12px;
+        }
+
+        .foto{
+            width: 62px;
+            height: 62px;
+            border-radius: 30px;
+            margin-top: 10px;
+            border: 2px white solid;
+        }
+
+        .fundos li{
+            list-style: none;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .nameAndPhotograph{
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-left: 50px;
+            height: 250px;
+            width: 150px;
+            border: 1px rgb(221, 214, 214) solid;
+            background-color: white;
+        }
+
+        .fundos{
+            text-align: center;
+            font-size: 14px;
+        }
+        .fundo{
+            height: 47px;
+            background-color: rgb(220, 201, 201);
+            border-radius: 10px 10px 0px 0px ;
+            width: 149px;
+            border: 0.2px rgb(221, 214, 214) solid;
+            border-bottom: none;
+        }
+
+        .nameAndPhotograph label{
+            margin-top: 10px;
+            font-size: 10px;
+            margin-bottom: 6px;
+        }
+
+        .nameAndPhotograph hr{
+            color: rgb(230, 232, 222);
+            margin-top: 6px;
+            margin-bottom: 2px;
+        }
+
+        #conexoes {
+            border: none;
+            margin-top: 10px;
+            width: 147px;
+            height: 36px;
+            background-color:white ;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        #conexoes:hover {
+            background-color: rgb(242, 237, 240);
+        }
+
+        #conexoes p{
+            margin-top: 1px;
+            margin-bottom: 6px;
+            font-size: 10px;
+            margin-right: 35px;
+            margin-bottom: 15px;
+        }
+
+        
+
+
+
+        #conexoes label{
+            margin-right: 79px;
+            margin-top: 10px;
+            font-size: 10px;
+            color: grey;
+        }
+
+        .fundos p {
+            margin-top: 15px;
+        }
+
+        #items {
+            border: none;
+            margin-top: 4px;
+            width: 147px;
+            height: 35px;
+            background-color:white ;
+            text-align: center;
+            margin-right: 10px;
+            font-size: 13px;
+            color: grey;
+        }
+
+        #items:hover {
+            background-color: rgb(242, 237, 240);
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container-logo">
+            <div class="logo-img">
+                <li for="" id="label"></li>
+                <a href="/home"><img id="imagem" src=https://olhardigital.com.br/wp-content/uploads/2021/02/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe829553.8964224815219374065349.png" alt="linkedln" height="52px" width="53px"></a>
+            </div>
+            <div class="pesquisa">
+                <input type="text" placeholder="Pesquisar">
+            </div>
+
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="/home">Inicio</a></li>
+                <li><a href="">Minha rede</a></li>
+                <li><a href="">Vagas</a></li>
+                <li><a href="">Mensagens</a></li>
+            </ul>
+        </div>
+        
+    </header>
+
+
+    <div class="nameAndPhotograph">
+        <div class="fundo">
+            <div class="fundos">
+                <img class="foto" src="https://media-exp1.licdn.com/dms/image/C4E03AQGxLMBgUb7v9w/profile-displayphoto-shrink_800_800/0/1648775493329?e=1654732800&v=beta&t=VaTRE9rZ_ml1V-sHWaVbyv4fT5XZlwM-y-x9kNuuJ1M" alt="">
+                <li for="" id="foto"></li>
+                <p>--</p>
+            </div>
+            <hr noshade="none"  size="1px" align="right" color="grey">
+            <button id="conexoes">
+                <label for="">Conexões</label>
+                <p>Amplie sua rede</p>
+            </button>
+            <br>
+            <hr noshade="none"  size="1px" align="right" color="grey">
+            <button id="items">Meus items</button>
+        </div>
+        
+    </div>
+
+
+
+
+    <div class="posts">
+        <div class="bola"></div>
+        <br>
+        <label>Criar Publicação</label>
+        <br>   
+        <hr noshade="none"  size="1px" align="right">
+        <textarea id="conteudo" name="post" placeholder="No que você está pensando?"></textarea>
+
+
+        <div class="publicar">
+            <button onclick="add()">Publicar</button>
+        </div>
+    </div>
+    <% if(post.length > 0) { post.forEach( posts => { %> 
+        <div class="publicaçoes">
+            <p id="p"></p>
+            <p id="postConteudo"><%= posts.conteudo %></p>
+            <button onclick="deletarPost('<%= posts._id %>')">Deletar Publicação</button>
+        </div>
+
+    <% })} else %> <% {%>
+        <p>Não ha posts...</p>
+
+        <% } %>
+    <script src="/validation.js"></script>
+    <script src="/index.js"></script>
+    <script src="/perfil.js"></script>
+   
+</body>
+</html>

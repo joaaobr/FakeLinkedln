@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkedln Entre ou Cadastre-se</title>
     <link rel="canonical" href="https://www.linkedin.com/signup"><link rel="icon" href="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca">
-    <title>Feed | Linkedln</title>
+    <link rel="stylesheet" href="/css/style.css">
     <style>
         body{
             background-color: rgb(245, 243, 244);
@@ -36,7 +37,7 @@
             display: flex;
             align-items: center;
         }
-        .logo-tetxo{
+        .logo-texto{
             margin-left: 25px;
             color: rgb(169, 169, 169);
         }
@@ -46,189 +47,26 @@
             margin: 0px 12px;
         }
 
-        .menu li a {
-            font-size: 16px;
-            text-decoration: none;
-            color: rgb(169, 169, 255)
-        }
-        .menu li a:hover {
-            font-size: 16px;
-            text-decoration: none;
-            color: rgb(41, 38, 38);
-        }
-        
-        .pesquisa input{
-            color: rgb(0, 0, 0);
-            height: 28px;
-            width: 190px;
-            border-radius: 3px;
-            margin-left: 5px;
-            border: none;
-            background-color: rgb(248, 245, 245);
-        }
-        
-        .pesquisa input:hover{
-            color: rgb(0, 0, 0);
-            border-radius: 5px;
-            margin-left: 5px;
-            border: none;
-            background-color: rgb(245, 243, 245);
-        }
-
-        .pesquisa ::-webkit-input-placeholder{
-            position: fixed;
-            margin-top: 7px;
-            margin-left: 15px;
-
-        }
-        .posts{
-            margin-top: 20px;
-            height: 305px;
-            width: 550px;
-            background-color: rgb(255, 255, 255);
-            border: 1px  rgb(240, 240, 240) solid;
-            border-radius: 11px;
-            border: 1px rgb(230, 238, 237) solid;
-            margin-left: 480px;
-        }
-
-        .posts input{
-            height: 35px;
-            width: 250px;
-            border: 1px rgb(230, 235, 238) solid;
-            font-size: 13px ;
-            text-decoration: none;
-            border-radius: 17px;
-            text-align: top;
-            margin-left: 122px;
-            margin-top: 22px;
-            text-align: left;
-        }
-
-        .posts textarea{
-            width: 500px;
-        }
-
-
-        .posts input:hover{
-            background-color: rgb(255, 255, 255);
-        }
-
-        textarea:focus {
-            box-shadow: 0 0 0 0;
-            outline: 0;
-        }
-
-        input:focus {
-            box-shadow: 0 0 0 0;
-            outline: 0;
-        }
-
-        .posts ::-webkit-input-placeholder{
-            position: fixed;
-            border: none;
-        }
-
-        
-
-        a{
-            text-decoration: none;
-        }
-
-        textarea {
-            border: none;
-            height: 195px;
-            width: 535px;
-            margin-left: 13px;
-            margin-top: 11px;
-            font-size: 13px;
-        }
-
-        textarea {
-            resize: none;
-        }       
-
-        label{
-            font-size: 20px;
-            margin-left: 15px;
-   
-        }
-      
-
-        .btn1 button{
-            color: rgb(92, 119, 240);
-            font-size: 13px;
-            background-color: rgb(248, 248, 247);
-            height: 20px;
-            width: 10px;
-            border: none;
-        }
-
-        .publicar button{
-            border: none;
-            height: 30px;
-            width: 110px;
-            background-color: rgb(244, 244, 244);
-            border-radius: 14px;
-            font-size: 13px;
-            margin-left: 1px;
+        img{
             margin-top: 10px;
-            color: rgb(199, 190, 200);
-            margin-left: 8px;
+            margin-right: 100px;
         }
-
-        .publicar button:hover{
-            color: white;
-            background-color: rgb(151, 205, 203);
-        }
-        
-        
-        
     </style>
 </head>
 <body>
     <header>
-        <div class="container-logo">
-            <div class="logo-img">
-                
-                <a href="/home"><img id="imagem" src=https://olhardigital.com.br/wp-content/uploads/2021/02/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe829553.8964224815219374065349.png" alt="linkedln" height="52px" width="53px"></a>
+        <div class="logo-texto">
+            <img id="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATcAAACiCAMAAAATIHpEAAAAilBMVEX///8AbL0AZ7sAY7oAarwAYroAaby70un6/f+uy+YofcRtn9MAZbrD1+wed8Jzo9PY5/Q8gsbf6/bv9vunwuG10Ohcl899rNg7hsiHr9kSdMF6o9Tr9Pqav+FJjcvO4fGLtt3R4/J2qNYAXLddm9FTk82Vu99DispkmM+gxuWVwON0rNkAV7ajv+AI9PXaAAAI5UlEQVR4nO2ca4OqKhRAU5DUsCxPj+OttKbH8Z65///v3dSEjWKNltU0e32LTGDJG6zXQxAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAE+QnYt/LsDDwFZ+/eyHg2fXYmHo49I4zeCrN2P63MzYhxD8jo2Rl5LJv7aDMo3zw7Kw8l5vfxZvD42Vl5KCPzTt7Mn1VR7+dt8OysPBT01g701g7Vm8kJ4ezh3mxvux8ky/vlqnugN2auV14/HnN6J2/2Qs4p5vVp2LicM5MbccO0e0Nx923DnzZgJCIZeiBUemNulIclRgtxWm+hmIrw+uK4Mc4l3PrdLEd9S9z9T7NfNmHGi1gsrTcaiorSZ83Fab0NxX3qhyn2uGgYKIka5ahPLkV+L2ai3SJab7wvQ+fNR8OtvXlyxmLuG+XoJbzRMbh22byJa+3tN3hGYdAkRy/hzVSaVvdx3kALS1mjPvUlvKnzy3XjwUhrb6BNoMY39KYMFBaP8+bI9o2N6y7S8hLe2BpcazcfibT2tgzFRcRplKOX8EaZL0OTB/anvcQ6X8XXzRaNX8IbLHCgCDzA20ncaW5HmdVQ24t4M3ixRzBxW0xRb/DW87fjcDhrVkl7L+PN4O7KD5bR3GizRnKLt/TSFvs6r+LNoPz0ibea1t/qrQ0v4y1V10oaersCpYzpG79uvdkT35+UJ2HNvdlL/3Sfa4PrQInsqjdQ0mgp4PzZ5Mw9Hsch16xttvcWSMoBeaMXOLOQneIM16sJ/GGNt0BBhvur2dAw+aktckfTWnf+YZ1FZiwO/pe80VCSiYIBNG38jF1/mebE9g+Lirn23hbiHjxPqdSxSm8Sh+mJgvThMUJHQITe2zIEqSJxEewsTjKyVohSahJjpDUXrc10TJRVLG7uN1/wRqbymEwWavkiwOEG43MYk+eWhsbtvY3F4qaVe7OMYjnycIooJLAicCqXu/TeFqY8fyFOEThDS33QlPN5pQtf7iwTRsasrX3dWznUkpViyvkCTCcy5kTpQm7wJudZhbei/B16q3LvTq3korcReJ7mIg8LdqTa3VE+nqgJiYaVaRJfBH9u8fahOTejZqkTb/8l1QxTXiRU5y0B5zZMN6/Uk3LdKL4PlbLg6XakzPFaJq+xN0e7EKuckejCm7nTDYuoEdR6iyzYmeUZmIR10x8zBE3PRr85AFLQ3Fuk737galMX3gxTmxW+rfO2hGMAnu9W2FBb1uqBRC9EKoLh1clljbd+KdQqVf8qEchXJ95qsAK9N/sIRqPWeb47k7WCEWPoDg0ur5L97eD6ElDz8lbHXj6jDr1RZqp1iK/03mDeCyNTcTfKj6dxlG0vI6lSrMxv1P7nFKVZKez38+bIhHbmzbSGu9GaK23pXustAT/ku0oSmFxwmYrnwM97tsrGACPmejTaG0SdTLWtp4E39dRuFbQnXXnj6+xAoh1z2OLbGm/RB/zV+eZiFV52w5k42e1mdX4C4ySL83Flb6105+3K22RnWcQi6mjxKB5TR96I2MOfghKXJ031Bhdb2bCYVogEqvsnsnzlxWWlqeFZOKysrbz1zexKSpRVWfnzbrxxsDsJptJ5ZhVv9gLMtGmR9InwQdQhgRCVJ0w+f4Mc4HUOFNrCWyRaBPg4egdx2068iaFaykZmId/AUbyBPoHKrIiNEjpUI41E/XVPnwLZCLDSUBVsU7Zp3+RQjcJN9aRbb1w5aSM3w/kv1RsbOaCQgm2xndh2cv9R+CO+MCfwrEX2UUEuE7QobxGYvsBjOc7FJbCbvRHlkLqcYZe90SEc1sc61dRUkdmJ4OyMHcvJkwWuhTd40IaDBmDarTeuNEoyEWVvcO1QScgX9oG5A2eMvHJOr3+LtzXcvgGVp2tvSuf9u94bgO3AT/QTNdXbSnkiSa+Ef83bpfYNzkThI3kVb3A+Ya1kAq5O2fLqs5VuKruRk/qSpQ/9Rt7YGhygAq/u2F84d5B6K7cAkKvl7Rt7M0ew42Ku+Bkoh3Xv5KXjtUvtm/fO3gbKOq88TAzmEO5QT5jA4ZRyvCgjfuP2LZ0vwMMZVvE+rEg3vXhE7NL4TebhLcvbaYgJ6mSR+23dPEtlKQtr+eD7SjYA7+mtF8Mm7lhOH7/4isMYzE+Vd7cj0EI+xdvADqrY9/TWc8Egk+SJDOQ8wlLfZV8eN9pbqwtOGzhwfkb7ZjCzSr5IdDdvE2XRJ8/OQO6r8xW4VxRyvpV334CBHuXz8wzcjpVx8zPKm3YcwO/rDbZFxRnrCC6THKe5EDsacHry48osw16FcmOUeJ6zDdXF8+d403Bvb8p08LyYvocvoBF6HIwG+5Dk5YgRcWyir8wsaPqCHylveb+vt6VSU+NKUL7fAvNiFK0eVF7DU9o3HXf31nOUdsorB2mSUCxfT2qXTp46ftMn+u7e4G5pscswvyCuOAqR+tWcIcnvIla639hbAI/C81kvF1eXDO6CteuV9jI+E3sBXXlbJon6JyJP8KY28OezSw7RnmGg1kC5f6I5WMMXvWvebm7f/nWcRDnh8wxvYGqV9ov5g/TXVXOUh+W1tsgtrYQycjIbd1zefP/v34mSFNuwLvKR3cktPpLP3NsnKQI+FG/zD/HD/zJvn+LzDEQawiiKjdT+QjknT00yjKsvbdqxIcscZcRNe9vfRbSfV71tM29gJlznDT7ywHEcD26Kn76+QubJEx/Pw9KpvEDx5svw7JEu5YXwRekJjGEqHr4fu9wiPIVYxqBfPdCXEvxa8OwiQsxZfo2IFh4KBu8Z7UcF26zqsJ0MgK0tHW/FF/JgzamqeKuksjr/UgSRs4rjQ9Ivnx1VWHrJIT44m4tvosD/JZATR6oPEIVcUDqP9HP+zAz/d6Ud6K0d6K0d6K0dLf4pRM/ldei3wyHXlXyJhu/Gf3eC1i9OqsgTjj+Eacv/LVMxuXc9qvfCG6drwjfB+bjZP0K9BXY0dW5jGv2ciQKCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF/lf5ZKuG34VLL3AAAAAElFTkSuQmCC" alt="linkedln" height="46px" width="83px">
+            <div class="menu">
+                <ul>
+                    <li>Descobrir</li>
+                    <li>Pessoas</li>
+                    <li>Learning</li>
+                    <li>Vagas</li>
+                </ul>
             </div>
-            <div class="pesquisa">
-                <input type="text" placeholder="Pesquisar">
-            </div>
-            <div class="logo-texto">
-
-            </div>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="/home">Inicio</a></li>
-                <li><a href="">Minha rede</a></li>
-                <li><a href="">Vagas</a></li>
-                <li><a href="">Mensagens</a></li>
-            </ul>
         </div>
     </header>
-    
-    <div class="posts">
-        <div class="bola"></div>
-        <br>
-        <label>Criar Publicação</label>
-        <br>
-        <!--<input type="text" placeholder="Começar Pub
-        <textarea placeholdlicação">-->
-            
-        <hr noshade="none"  size="1px" align="right">
-        <textarea placeholder="No que você está pensando?"></textarea>
-
-
-        <div class="publicar">
-            <button>Publicar</button>
-        </div>
-    </div>
-    <script src="/index.js"></script>
-
-
-   
+        
 </body>
 </html>
