@@ -98,12 +98,20 @@ app.post('/addPost', async(req, res) => {
         if(req.body.conteudo == ""){
             return res.status(200).json({status: false, mensagem: 'Nenhum conteudo recebido!'});
         }
-        const conteudo = req.body.conteudo
-        const post = await db.PostModel.create(req.body)
-        res.status(201).json({status: true, msg:'Post criado com sucesso!'})  
         
-        
-
+        const email = req.body.id4
+        const nome = req.body.id2
+        const sobrenome = req.body.id3
+        const user = await db.UserModel.find({
+            email,
+            nome,
+            sobrenome
+        })
+        console.log(user)
+        //if(user[0]) {
+            const post = await db.PostModel.create(req.body)
+            res.status(201).json({status: true, msg:'Post criado com sucesso!'})  
+        //}
     } catch (error) {
         console.log(error)
         res.status(500).send(error)
@@ -120,6 +128,22 @@ app.post('/deletePost/:id', async(req, res) => {
     } 
 })
 
+
+app.post('/verificarConta', async(req, res) => {
+    try {
+        const nome = req.body.id2
+        const sobrenome = req.body.id3
+        const email = req.body.id4
+        const user = await db.UserModel.find(req.body)
+        console.log(user[0])
+        
+        if(user[0]) {
+            res.status(200).json(user)
+        }
+    } catch (error) {
+        res.status(500).json({msg: error})
+    }
+})
 
 
 app.listen(port, () => console.log('Conectado...'))

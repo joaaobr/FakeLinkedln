@@ -62,6 +62,7 @@ function adicionarUsuario() {
 
 
 
+
 function add() {
   const input1 = document.getElementById("conteudo");
   const conteudo = input1.value;
@@ -75,12 +76,13 @@ function add() {
   })
   .then(res => {  
     if(res.ok) {
+      console.log(res)
         return res.text()
     }
     throw new Error(res)   
 })
   .then(res => {
-    const response = JSON.parse(res)
+   const response = JSON.parse(res)
     if(response.status == false){
         alert(response.mensagem);
     }else{
@@ -91,28 +93,7 @@ function add() {
     console.log(err)
     alert(err.mensagem);
   })
-};
-
-
-function deletarPost(id) {
-  const input1 = document.getElementById("conteudo");
-  const conteudo = input1.value;
-
-  const obj = { conteudo }
-  
-  fetch(`/deletePost/${id}`, {
-      method: "POST",
-      headers: {'Content-Type': 'application/json'}, 
-      body: JSON.stringify(obj)
-  })
-  .then(res => {
-    window.location.reload();
-  })
-  .catch(err => {
-    document.getElementById("descricao").value = '';
-    alert("Falha ao inserir dados!")
-  })
-};
+}
 
 
 function deletarPost(id) {
