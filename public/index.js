@@ -68,7 +68,11 @@ function add() {
   const conteudo = input1.value;
   const perfil = JSON.parse(localStorage.getItem('_perfil_dados'))
   const obj = { conteudo, perfil}
-  
+  if(perfil.nome == undefined || perfil.nome == null || perfil.nome == "" || perfil.sobrenome == null || perfil.sobrenome == undefined || perfil.sobrenome == "" || perfil.email == null || perfil.email == "" || perfil.email == undefined ){
+    alert('Dados invalidos!')
+    localStorage.setItem("_perfil_dados", {logado: false})
+    window.location.href = '/login'
+  }else{
   fetch('/addPost', {
       method: "POST",
       headers: {'Content-Type': 'application/json'}, 
@@ -93,6 +97,7 @@ function add() {
     console.log(err)
     alert(err.mensagem);
   })
+}
 }
 
 
