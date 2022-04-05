@@ -127,15 +127,18 @@
         .posts ::-webkit-input-placeholder{
             position: fixed;
             border: none;
+            
         }
 
         
 
         a{
             text-decoration: none;
+            
         }
 
         textarea {
+            
             border: none;
             height: 195px;
             width: 535px;
@@ -145,6 +148,7 @@
         }
 
         textarea {
+            
             resize: none;
         }       
 
@@ -289,7 +293,7 @@
             margin-top: 4px;
             width: 147px;
             height: 35px;
-            background-color:white ;
+            background-color:white;
             text-align: center;
             margin-right: 10px;
             font-size: 13px;
@@ -299,6 +303,47 @@
         #items:hover {
             background-color: rgb(242, 237, 240);
         }
+        #perfilNome{
+            margin-bottom: 10px;
+        }
+
+        #deletePost{
+            border: none;
+            height: 26px;
+            margin-left: 11px;
+            background-color: rgb(244, 244, 244);
+            position: absolute;
+            width: 110px;
+            border-radius: 9px;
+            margin-top: 190px;
+            font-size: 12px;
+            
+        }
+
+        #deletePost:hover{
+            background-color: rgb(219, 245, 243);
+            color: rgb(29, 35, 34);
+        }
+
+        #postConteudo{
+            font-size: 14px;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+
+        #logout{
+            border: none;
+            position: absolute;
+            font-size: 13px;
+            width: 26px;
+            height: 16px;
+            background: none;
+            color: rgb(169, 169, 255);
+        }
+
+        logout:hover{
+            color: black;
+        }
     </style>
       
 </head>
@@ -306,8 +351,7 @@
     <header>
         <div class="container-logo">
             <div class="logo-img">
-                <li for="" id="label"></li>
-                
+                <li for="" id="label"></li> 
                 <a href="/home"><img id="imagem" src=https://olhardigital.com.br/wp-content/uploads/2021/02/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe829553.8964224815219374065349.png" alt="linkedln" height="52px" width="53px"></a>
             </div>
             <div class="pesquisa">
@@ -321,7 +365,7 @@
                 <li><a href="">Minha rede</a></li>
                 <li><a href="">Vagas</a></li>
                 <li><a href="">Mensagens</a></li>
-                <button onclick="logout()">Sair</button>
+                <button id="logout" onclick="logout()">Sair</button>
             </ul>
         </div>
         
@@ -366,11 +410,12 @@
 
     <% if(post.length > 0) { post.forEach( posts => { %> 
         <div class="publicaçoes">
-            <p id="p"></p>
+            
+            <p id="perfilNome"><%= posts.perfil.nome %></p>
+            <hr noshade="none"  size="1px" align="right" color="grey">
             <p id="postConteudo"><%= posts.conteudo %></p>
-            <p><%= posts.perfil.nome %></p>
-            <button onclick="deletarPost('<%= posts._id %>')">Deletar Publicação</button>
-
+            <button id="deletePost" onclick="deletarPost('<%= posts._id %>')">Deletar Publicação</button>
+            <button onclick="addLike('<%= post._id %>')">Like</button>
         </div>
 
     <% })}%>
@@ -378,5 +423,6 @@
     <script src="/index.js"></script>
     <script src="/perfil.js"></script>
     <script src="/validarConta.js"></script>
+    <script src="/validarUndefined.js"></script>
 </body>
 </html>

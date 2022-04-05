@@ -115,3 +115,36 @@ function deletarPost(id) {
     alert("Falha ao inserir dados!")
   })
 };
+
+
+function addLike(id) {
+  const input1 = document.getElementById("conteudo");
+  const conteudo = input1.value;
+  const perfil = JSON.parse(localStorage.getItem('_perfil_dados'))
+  const obj = { conteudo, perfil}
+  
+  fetch('/likePost', {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'}, 
+      body: JSON.stringify(obj)
+  })
+  .then(res => {  
+    if(res.ok) {
+      console.log(res)
+        return res.text()
+    }
+    throw new Error(res)   
+})
+  .then(res => {
+   const response = JSON.parse(res)
+    if(response.status == false){
+        alert(response.mensagem);
+    }else{
+      window.location.reload();
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    alert(err.mensagem);
+  })
+}

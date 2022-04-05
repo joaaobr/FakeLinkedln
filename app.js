@@ -131,19 +131,31 @@ app.post('/deletePost/:id', async(req, res) => {
 
 app.post('/verificarConta', async(req, res) => {
     try {
-        const nome = req.body.id2
-        const sobrenome = req.body.id3
-        const email = req.body.id4
         const user = await db.UserModel.find(req.body)
         console.log(user[0])
         
         if(user[0]) {
             res.status(200).json(user)
         }
+
+        
     } catch (error) {
+        console.log(error)
         res.status(500).json({msg: error})
     }
 })
+
+app.post('likePost/:id', async(req, res) => {
+    try {
+        const id = req.params.id
+        const post = await db.PostModel.findByIdAndUpdate(id, req.body, {new: true})
+
+        res.status(200).json({post})
+    } catch (error) {
+        res.status(500).json({error})
+    }
+})
+
 
 
 app.listen(port, () => console.log('Conectado...'))

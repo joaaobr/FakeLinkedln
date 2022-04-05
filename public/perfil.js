@@ -13,18 +13,18 @@ function names() {
 function exibirNomes() {
     const label =  document.getElementById('label')
     const dados = JSON.parse(getNames())
-    const nome =  dados.nome + ' ' + dados.sobrenome
-
-    const p = document.getElementById('p')
+    const nome =  document.createTextNode(dados.nome + ' ' + dados.sobrenome)
+    label.appendChild(nome)
+    const p = document.getElementById('')
     let text = document.createTextNode(nome)
-    p.appendChild(text)
+    //p.appendChild(text)
 
     const label2 = document.getElementById('foto')
-    let tex = document.createTextNode(nome)
+    let tex = document.createTextNode(dados.nome + ' ' + dados.sobrenome)
     label2.appendChild(tex)
 
     let texto = document.createTextNode(nome)
-    return label.appendChild(texto)
+    //label2.appendChild(texto)
 
 }
 

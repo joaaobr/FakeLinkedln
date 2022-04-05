@@ -28,6 +28,5 @@ function loginDeUsuarios() {
     .catch(err => {
         localStorage.setItem('_perfil_dados', JSON.stringify({ logado: false }))
       alert("E-mail ou senha estão errados!")
-      a
     })
   };
